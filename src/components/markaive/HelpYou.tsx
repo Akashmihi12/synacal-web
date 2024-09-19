@@ -1,3 +1,5 @@
+// src/components/markaive/HelpYou.tsx
+
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
@@ -21,9 +23,28 @@ const HelpYou = () => {
 
   return (
     <div className="w-full py-12 flex justify-center">
-      <div className="w-[85%] max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-8 rounded-lg shadow-md">
-        {/* Left Form Section */}
-        <div className="flex flex-col justify-center">
+      <div
+        className="w-[90%] max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#F9F6FD] p-8 rounded-lg shadow-md"
+      >
+        {/* Image Section with Animation */}
+        <motion.div
+          ref={imageRef}
+          initial={{ opacity: 0, x: 100 }}
+          animate={inViewImage ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="flex justify-center items-center md:order-2 order-1"
+        >
+          <Image
+            src="/markaive/MarkAIve_Help_You.webp" // Path to the image in the public folder
+            alt="Help You"
+            width={500}
+            height={500}
+            className="rounded-lg"
+          />
+        </motion.div>
+
+        {/* Form Section */}
+        <div className="flex flex-col justify-center md:order-1 order-2">
           <motion.h2
             className="text-3xl font-semibold text-black mb-4"
             initial={{ opacity: 0, y: -50 }}
@@ -38,7 +59,7 @@ const HelpYou = () => {
             animate={inView1 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            Let’s Talk About Your Query, Don’t hesitate to reach out via email -{" "}
+            Let’s talk about your query. Don’t hesitate to reach out via email -{" "}
             <span className="text-blue-500">hello@synacal.com</span>
           </motion.p>
 
@@ -130,29 +151,12 @@ const HelpYou = () => {
             <motion.button
               whileTap={{ scale: 0.9 }}
               whileHover={{ scale: 1.1 }}
-              className="px-6 py-3 rounded-full bg-white font-semibold text-md border-[1px] border-black text-black hover:border-main-gradient text-main-gradient hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#CF71ED] hover:to-[#3335E2] transition duration-300"
+              className="px-6 py-3 rounded-full bg-white font-semibold text-md border-[1px] border-black text-black hover:border-main-gradient hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#CF71ED] to-[#3335E2] transition duration-300"
             >
               Send Message
             </motion.button>
           </motion.div>
         </div>
-
-        {/* Right Image Section with Animation */}
-        <motion.div
-          ref={imageRef}
-          initial={{ opacity: 0, x: 100 }}
-          animate={inViewImage ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="flex justify-center items-center"
-        >
-          <Image
-            src="/markaive/MarkAIve_Help_You.webp" // Path to the image in the public folder
-            alt="Help You"
-            width={500}
-            height={500}
-            className="rounded-lg"
-          />
-        </motion.div>
       </div>
     </div>
   );

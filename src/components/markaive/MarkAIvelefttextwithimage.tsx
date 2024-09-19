@@ -1,3 +1,5 @@
+// src/components/markaive/MarkAIvelefttextwithimage.tsx
+
 "use client";
 import React from "react";
 import Image from "next/image";
@@ -9,7 +11,6 @@ const MarkAIvelefttextwithimage = () => {
   const [ref1, inView1] = useInView({ triggerOnce: false });
   const [ref2, inView2] = useInView({ triggerOnce: false });
   const [ref3, inView3] = useInView({ triggerOnce: false });
-  const [ref4, inView4] = useInView({ triggerOnce: false });
 
   return (
     <div className="w-full py-12 flex justify-center">
@@ -20,7 +21,7 @@ const MarkAIvelefttextwithimage = () => {
           initial={{ opacity: 0, x: -100 }}
           animate={inView1 ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex flex-col justify-center"
+          className="flex flex-col justify-center md:order-1 order-2"
         >
           <h2 className="text-3xl font-semibold text-black mb-4">
             A tool that works for you
@@ -42,10 +43,10 @@ const MarkAIvelefttextwithimage = () => {
               whileHover={{
                 scale: 1.1,
                 backgroundImage: "linear-gradient(90deg, #CF71ED, #3335E2)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                color: "transparent",
               }}
-              className="px-4 py-2 bg-white border border-black text-sm font-semibold rounded-full text-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#CF71ED] hover:to-[#3335E2]"
+              className="px-4 py-2 bg-white border border-black text-sm font-semibold rounded-full text-black"
             >
               Insightful
             </motion.button>
@@ -57,10 +58,10 @@ const MarkAIvelefttextwithimage = () => {
               whileHover={{
                 scale: 1.1,
                 backgroundImage: "linear-gradient(90deg, #CF71ED, #3335E2)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                color: "transparent",
               }}
-              className="px-4 py-2 bg-white border border-black text-sm font-semibold rounded-full text-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#CF71ED] hover:to-[#3335E2]"
+              className="px-4 py-2 bg-white border border-black text-sm font-semibold rounded-full text-black"
             >
               Strategic
             </motion.button>
@@ -72,10 +73,10 @@ const MarkAIvelefttextwithimage = () => {
               whileHover={{
                 scale: 1.1,
                 backgroundImage: "linear-gradient(90deg, #CF71ED, #3335E2)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                color: "transparent",
               }}
-              className="px-4 py-2 bg-white border border-black text-sm font-semibold rounded-full text-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#CF71ED] hover:to-[#3335E2]"
+              className="px-4 py-2 bg-white border border-black text-sm font-semibold rounded-full text-black"
             >
               Actionable
             </motion.button>
@@ -87,10 +88,10 @@ const MarkAIvelefttextwithimage = () => {
               whileHover={{
                 scale: 1.1,
                 backgroundImage: "linear-gradient(90deg, #CF71ED, #3335E2)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                color: "transparent",
               }}
-              className="px-4 py-2 bg-white border border-black text-sm font-semibold rounded-full text-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#CF71ED] hover:to-[#3335E2]"
+              className="px-4 py-2 bg-white border border-black text-sm font-semibold rounded-full text-black"
             >
               Clarity
             </motion.button>
@@ -102,10 +103,10 @@ const MarkAIvelefttextwithimage = () => {
               whileHover={{
                 scale: 1.1,
                 backgroundImage: "linear-gradient(90deg, #CF71ED, #3335E2)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                color: "transparent",
               }}
-              className="px-4 py-2 bg-white border border-black text-sm font-semibold rounded-full text-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#CF71ED] hover:to-[#3335E2]"
+              className="px-4 py-2 bg-white border border-black text-sm font-semibold rounded-full text-black"
             >
               Discernment
             </motion.button>
@@ -118,7 +119,7 @@ const MarkAIvelefttextwithimage = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={inView3 ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex justify-center"
+          className="flex justify-center md:order-2 order-1"
         >
           <Image
             src="/markaive/MarkAIve_lefttext_with_image.webp"
